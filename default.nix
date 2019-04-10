@@ -11,5 +11,6 @@ mkDerivation {
   libraryToolDepends = [ hpack ];
   preConfigure = "hpack";
   homepage = "https://github.com/jappeace/template#readme";
+  description = "Fiat content types";
   license = stdenv.lib.licenses.mit;
 }

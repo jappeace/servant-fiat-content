@@ -5,6 +5,9 @@ license:             MIT
 author:              "Jappie Klooster"
 maintainer:          "jappieklooster@hotmail.com"
 copyright:           "2019 Jappie Klooster"
+synopsis: Fiat content types
+category: Servant, Web
+description: Use bytestring or text to deliver content directly
 
 extra-source-files:
 - Readme.md

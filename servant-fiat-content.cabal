@@ -2,10 +2,14 @@
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: 3f701ffd5cd1e39b404b302d1d5e57dfe5e3cde782e30fe8f6662c00942eed8b
+-- hash: 8be8056cc2a88c694206d4bda3d09f7e856e4d100b7434a607c0c808721be9fa
 
+cabal-version:  >= 1.10
 name:           servant-fiat-content
 version:        1.0.0
+synopsis:       Fiat content types
+description:    Use bytestring or text to deliver content directly
+category:       Servant, Web
 homepage:       https://github.com/jappeace/template#readme
 bug-reports:    https://github.com/jappeace/template/issues
 author:         Jappie Klooster
@@ -14,7 +18,6 @@ copyright:      2019 Jappie Klooster
 license:        MIT
 license-file:   LICENSE
 build-type:     Simple
-cabal-version:  >= 1.10
 extra-source-files:
     LICENSE
     Readme.md
