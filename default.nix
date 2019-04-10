@@ -1,13 +1,14 @@
-{ mkDerivation, base, hpack, stdenv }:
+{ mkDerivation, base, bytestring, hpack, http-media, servant
+, stdenv, text
+}:
 mkDerivation {
-  pname = "template";
+  pname = "servant-bs-content";
   version = "1.0.0";
   src = ./.;
-  isLibrary = true;
-  isExecutable = true;
-  libraryHaskellDepends = [ base ];
+  libraryHaskellDepends = [
+    base bytestring http-media servant text
+  ];
   libraryToolDepends = [ hpack ];
-  executableHaskellDepends = [ base ];
   preConfigure = "hpack";
   homepage = "https://github.com/jappeace/template#readme";
   license = stdenv.lib.licenses.mit;

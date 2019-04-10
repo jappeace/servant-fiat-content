@@ -1,4 +1,4 @@
-name:                template
+name:                servant-bs-content
 version:             1.0.0
 github:              "jappeace/template"
 license:             MIT
@@ -47,17 +47,10 @@ default-extensions:
 
 dependencies:
 - base >= 4.7 && < 5
+- bytestring
+- servant >=0.12 && <0.17
+- http-media
+- text
 
 library:
   source-dirs: src
-
-executables:
-  exe:
-    main:                exe.hs
-    source-dirs:         app
-    dependencies:
-    - template
-    ghc-options:
-    - -threaded
-    - -rtsopts
-    - -with-rtsopts=-N

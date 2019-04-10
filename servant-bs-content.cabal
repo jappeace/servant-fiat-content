@@ -2,10 +2,9 @@
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: fff2b3816e6a55dedb7070ff4ebb98947f58154468d1555c5cb5e91e5d2b74b4
+-- hash: e57e9efb3f28392cf71f0963b73b86340a628c403843495fa84536314359c5c0
 
-cabal-version:  >= 1.10
-name:           template
+name:           servant-bs-content
 version:        1.0.0
 homepage:       https://github.com/jappeace/template#readme
 bug-reports:    https://github.com/jappeace/template/issues
@@ -15,6 +14,7 @@ copyright:      2019 Jappie Klooster
 license:        MIT
 license-file:   LICENSE
 build-type:     Simple
+cabal-version:  >= 1.10
 extra-source-files:
     LICENSE
     Readme.md
@@ -25,26 +25,18 @@ source-repository head
 
 library
   exposed-modules:
-      Lib
+      Servant.HTML.ByteString
+      Servant.JS.ByteString
   other-modules:
-      Paths_template
+      Paths_servant_bs_content
   hs-source-dirs:
       src
   default-extensions: EmptyCase FlexibleContexts FlexibleInstances InstanceSigs MultiParamTypeClasses LambdaCase MultiWayIf NamedFieldPuns TupleSections DeriveFoldable DeriveFunctor DeriveGeneric DeriveLift DeriveTraversable DerivingStrategies GeneralizedNewtypeDeriving StandaloneDeriving OverloadedStrings TypeApplications
   ghc-options: -Wall -Wcompat -Wincomplete-uni-patterns -Wredundant-constraints -Wincomplete-record-updates -Widentities
   build-depends:
       base >=4.7 && <5
-  default-language: Haskell2010
-
-executable exe
-  main-is: exe.hs
-  other-modules:
-      Paths_template
-  hs-source-dirs:
-      app
-  default-extensions: EmptyCase FlexibleContexts FlexibleInstances InstanceSigs MultiParamTypeClasses LambdaCase MultiWayIf NamedFieldPuns TupleSections DeriveFoldable DeriveFunctor DeriveGeneric DeriveLift DeriveTraversable DerivingStrategies GeneralizedNewtypeDeriving StandaloneDeriving OverloadedStrings TypeApplications
-  ghc-options: -Wall -Wcompat -Wincomplete-uni-patterns -Wredundant-constraints -Wincomplete-record-updates -Widentities -threaded -rtsopts -with-rtsopts=-N
-  build-depends:
-      base >=4.7 && <5
-    , template
+    , bytestring
+    , http-media
+    , servant >=0.12 && <0.17
+    , text
   default-language: Haskell2010

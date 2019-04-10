@@ -1,18 +1,14 @@
-# Haskell project template
+# Servant BS content
 
-Use cabal within a nix shell.
+Sometimes you want to have a plain text just be an HTML content type response,
+for example when you use a reflex to generate HTML, you have
+to use IO: https://hackage.haskell.org/package/reflex-dom-core-0.4/docs/Reflex-Dom-Builder-Static.html#v:renderStatic
 
-similar to: https://github.com/monadfix/nix-cabal
-except I use a makefile and a seperate filewatch script.
+Or a plain text be a Javascript, when you generate javascript
+clients in servant and want them to always be up to date with
+the running server (no filesystem BS):
+http://hackage.haskell.org/package/servant-js-0.9.4/docs/Servant-JS.html#v:jsForAPI
 
-Comes with:
-+ a poor mans' file watch.
-+ a nix shell.
-+ A couple of handy make commands.
-+ Starting haskell files
+Fear not! we can do this rather trivially.
+As shown by this module.
 
-
-## TODO
-
-+ build tools as input of the nix shell (Nobody seems to do this, but it allows a pure shell, and reducing the change of works on my machine)
-+ Move towards steel overseer for platform independence
