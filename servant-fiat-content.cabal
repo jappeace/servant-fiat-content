@@ -2,9 +2,9 @@
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: e57e9efb3f28392cf71f0963b73b86340a628c403843495fa84536314359c5c0
+-- hash: 3f701ffd5cd1e39b404b302d1d5e57dfe5e3cde782e30fe8f6662c00942eed8b
 
-name:           servant-bs-content
+name:           servant-fiat-content
 version:        1.0.0
 homepage:       https://github.com/jappeace/template#readme
 bug-reports:    https://github.com/jappeace/template/issues
@@ -25,10 +25,10 @@ source-repository head
 
 library
   exposed-modules:
-      Servant.HTML.ByteString
-      Servant.JS.ByteString
+      Servant.HTML.Fiat
+      Servant.JS.Fiat
   other-modules:
-      Paths_servant_bs_content
+      Paths_servant_fiat_content
   hs-source-dirs:
       src
   default-extensions: EmptyCase FlexibleContexts FlexibleInstances InstanceSigs MultiParamTypeClasses LambdaCase MultiWayIf NamedFieldPuns TupleSections DeriveFoldable DeriveFunctor DeriveGeneric DeriveLift DeriveTraversable DerivingStrategies GeneralizedNewtypeDeriving StandaloneDeriving OverloadedStrings TypeApplications

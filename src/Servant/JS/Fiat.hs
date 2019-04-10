@@ -1,4 +1,4 @@
-module Servant.JS.ByteString
+module Servant.JS.Fiat
   ( JS ) where
 
 import qualified Data.ByteString      as BS

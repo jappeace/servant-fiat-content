@@ -1,4 +1,4 @@
-module Servant.HTML.ByteString(HTML) where
+module Servant.HTML.Fiat(HTML) where
 
 import qualified Data.ByteString      as BS
 import qualified Data.ByteString.Lazy as LBS

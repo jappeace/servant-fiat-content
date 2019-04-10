@@ -2,7 +2,7 @@
 , stdenv, text
 }:
 mkDerivation {
-  pname = "servant-bs-content";
+  pname = "servant-fiat-content";
   version = "1.0.0";
   src = ./.;
   libraryHaskellDepends = [
