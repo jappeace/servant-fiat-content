@@ -1,4 +1,4 @@
-# Servant BS content
+# Servant fiat content
 
 Sometimes you want to have a plain text just be an HTML content type response,
 for example when you use a reflex to generate HTML, you have
@@ -9,6 +9,5 @@ clients in servant and want them to always be up to date with
 the running server (no filesystem BS):
 http://hackage.haskell.org/package/servant-js-0.9.4/docs/Servant-JS.html#v:jsForAPI
 
-Fear not! we can do this rather trivially.
-As shown by this module.
+Fear not! we can do this rather trivially, shown by this module.
 
