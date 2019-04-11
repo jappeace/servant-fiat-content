@@ -1,6 +1,6 @@
 name:                servant-fiat-content
 version:             1.0.0
-github:              "jappeace/template"
+github:              "jappeace/servant-fiat-content"
 license:             MIT
 author:              "Jappie Klooster"
 maintainer:          "jappieklooster@hotmail.com"
