@@ -10,7 +10,7 @@ mkDerivation {
   ];
   libraryToolDepends = [ hpack ];
   preConfigure = "hpack";
-  homepage = "https://github.com/jappeace/template#readme";
+  homepage = "https://github.com/jappeace/servant-fiat-content#readme";
   description = "Fiat content types";
   license = stdenv.lib.licenses.mit;
 }
