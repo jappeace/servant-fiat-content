@@ -1,18 +1,14 @@
-{ pkgs ? (
-   let 
-    hostPkgs = import <nixpkgs> {};
-    pinnedPkgs = hostPkgs.fetchFromGitHub {
-      owner = "NixOS";
-      repo = "nixpkgs-channels";
-      # nixos-unstable as of 18.02.2019
-      rev = "36f316007494c388df1fec434c1e658542e3c3cc";
-      sha256 = "1w1dg9ankgi59r2mh0jilccz5c4gv30a6q1k6kv2sn8vfjazwp9k";
-    };
-  in
-  import pinnedPkgs {}
- )
+{
+  # https://github.com/NixOS/nixpkgs/blob/master/pkgs/top-level/haskell-packages.nix
+  pkgs ? import ./nix/pkgs.nix
 }:
-let 
-    build = pkgs.haskellPackages.callPackage ./default.nix { };
-in 
-build.env
+#  https://input-output-hk.github.io/haskell.nix/tutorials/development/
+pkgs.haskellPackages.shellFor {
+  packages = ps : [ ps.servant-fiat-content ];
+  buildInputs = [
+        pkgs.ghcid
+        pkgs.cabal-install
+        ];
+  exactDeps = true;
+  NIX_PATH="nixpkgs=${pkgs.path}:.";
+}

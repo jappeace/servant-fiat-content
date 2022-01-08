@@ -1,16 +1,20 @@
-{ mkDerivation, base, bytestring, hpack, http-media, servant
-, stdenv, text
-}:
-mkDerivation {
-  pname = "servant-fiat-content";
-  version = "1.0.0";
-  src = ./.;
-  libraryHaskellDepends = [
-    base bytestring http-media servant text
-  ];
-  libraryToolDepends = [ hpack ];
-  preConfigure = "hpack";
-  homepage = "https://github.com/jappeace/servant-fiat-content#readme";
-  description = "Fiat content types";
-  license = stdenv.lib.licenses.mit;
-}
+{ pkgs ? import ./nix/pkgs.nix,
+  # should be default ghc
+  # https://github.com/NixOS/nixpkgs/blob/master/pkgs/top-level/all-packages.nix#L9029
+  ... }:
+
+let
+  hpkgs = pkgs.haskellPackages;
+  ignore = import ./nix/gitignoreSource.nix { inherit (pkgs) lib; };
+  # https://github.com/NixOS/nixpkgs/blob/dbacb52ad8/pkgs/development/haskell-modules/make-package-set.nix#L216
+  src = ignore.gitignoreSource ./.;
+  cabal2nix =
+    hpkgs.callCabal2nix "servant-fiat-content" src {
+    };
+in
+# https://github.com/NixOS/nixpkgs/blob/dbacb52ad8/pkgs/development/haskell-modules/generic-builder.nix#L13
+
+pkgs.haskell.lib.overrideCabal cabal2nix (drv: {
+  inherit src;
+  isExecutable = true;
+})
