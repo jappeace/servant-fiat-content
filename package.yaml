@@ -4,7 +4,7 @@ github:              "jappeace/servant-fiat-content"
 license:             MIT
 author:              "Jappie Klooster"
 maintainer:          "jappieklooster@hotmail.com"
-copyright:           "2019 Jappie Klooster"
+copyright:           "2021 Jappie Klooster"
 synopsis: Fiat content types
 category: Servant, Web
 description: Use bytestring or text to deliver content directly
@@ -51,7 +51,7 @@ default-extensions:
 dependencies:
 - base >= 4.7 && < 5
 - bytestring
-- servant >=0.12 && <0.17
+- servant >=0.12 && < 1
 - http-media
 - text
 
